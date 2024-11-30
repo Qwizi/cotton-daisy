@@ -1,5 +1,5 @@
-<c-vars type title description shadow/>
-<div role="alert" class="alert{% if type %} alert-{{ type }}{% endif %}shadow-lg" {{ attrs }}>
+<c-vars type title description shadow text="white"/>
+<div role="alert" class="alert{% if type %} alert-{{ type }}{% endif %} shadow-lg{% if text %} text-{{ text }}{% endif %}" {{ attrs }}>
     {% if type == "info" %}
         <svg
                 xmlns="http://www.w3.org/2000/svg"

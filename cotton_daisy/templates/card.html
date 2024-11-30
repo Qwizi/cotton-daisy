@@ -1,6 +1,6 @@
 <c-vars
         bg="base-100"
-        w
+        w="96"
         shadow
         compact
         image_full
@@ -10,13 +10,7 @@
         image_alt="Image alternative text"
 />
 <div
-        class="card {% if bg %}bg-{{ bg }}{% endif %}
-        {% if w %}w-{{ w }}{% else %}w-96{% endif %}
-        {% if shadow %}shadow-{{ shadow }}{% endif %}
-        {% if compact %}card-compact{% endif %}
-        {% if image_full %}image-full{% endif %}
-        {% if glass %}glass{% endif %}
-        {% if side %}lg:card-side{% endif %}"
+        class="card{% if bg %} bg-{{ bg }}{% endif %}{% if w %} w-{{ w }}{% endif %}{% if shadow %} shadow-{{ shadow }}{% endif %}{% if compact %} card-compact{% endif %}{% if image_full %} image-full{% endif %}{% if glass %} glass{% endif %}{% if side %} lg:card-side{% endif %}"
         {{ attrs }}
 >
     {% if image_src %}
