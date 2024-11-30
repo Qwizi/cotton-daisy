@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cotton-daisy"
-version = "0.0.3"
+version = "0.0.4"
 description = "CLI for generating DaisyUI components for Django-Cotton"
 authors = ["Adrian Ciołek <ciolek.adrian@protonmail.com>"]
 license = "MIT"
