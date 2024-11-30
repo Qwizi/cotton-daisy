@@ -1,0 +1,43 @@
+<div
+        class="
+        card
+        {% if bg %}
+            bg-{{ bg }}
+        {% else %}
+            bg-base-100
+        {% endif %}
+        {% if w %}
+            w-{{ w }}
+        {% else %}
+            w-96
+        {% endif %}
+        {% if shadow %}
+            shadow-{{ shadow }}
+        {% endif %}
+        {% if compact %}
+            card-compact
+        {% endif %}
+        {{ class }}
+">
+    <div class="card-body {{ body_class }}">
+        {% if title %}
+        <h2 class="card-title {{ title_class }}">{{ title }}</h2>
+        {% endif %}
+
+        {{ slot }}
+
+        {% if footer %}
+        <div class="
+            card-actions
+            {% if footer_align %}
+                justify-{{ footer_align }}
+            {% else %}
+                justify-end
+            {% endif %}
+            {{ footer_class }}
+        ">
+            {{ footer }}
+        </div>
+        {% endif %}
+    </div>
+</div>

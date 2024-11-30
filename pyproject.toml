@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cotton-daisy"
+version = "0.1.0"
+description = "CLI for generating DaisyUI components for Django-Cotton"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "cotton_daisy" }
+]
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = "^0.14.0"
+
+[tool.poetry.scripts]
+cotton-daisy = "cotton_daisy.cli:app"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
