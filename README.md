@@ -6,3 +6,4 @@
 - Pre-designed DaisyUI components.
 - Simple integration with Django-Cotton.
 - Developer-friendly CLI.
+- Customizable component templates.
