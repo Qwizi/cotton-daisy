@@ -1,0 +1,55 @@
+name: Create Release
+
+on:
+    push:
+        branches:
+            - master
+        paths-ignore:
+            - README.md
+            - .gitignore
+
+jobs:
+    release:
+        name: Create Release
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Check out the repo
+                uses: actions/checkout@v4.1.7
+                with:
+                    token: ${{ secrets.RELEASE_GIT_TOKEN }}
+            -   name: "Install Poetry"
+                run: "pipx install poetry"
+            -   name: "Set up Python 3.12"
+                uses: "actions/setup-python@v5"
+                with:
+                    python-version: "3.12"
+                    cache: "poetry"
+            -   name: Update version in pyproject.toml
+                run: |
+                    poetry version patch
+            -   name: Commit and push changes
+                run: |
+                    git config --global user.email "github@actions.com"
+                    git config --global user.name "GitHub Actions "
+                    git add .
+                    if [[ -n "$(git diff --cached)" ]]; then
+                        git commit -m "Dump version to $(poetry version -s) [skip ci]"
+                        git push
+                    else
+                        echo "No changes to commit"
+                    fi
+            -   name: Extract version from pyproject.toml
+                id: extract_metadata
+                run: |
+                    VERSION=$(awk -F ' = ' '/version =/ {gsub(/"/, "", $2); print $2}' ./pyproject.toml)
+                    LABELS="version=$VERSION,latest"
+                    echo "::set-output name=version::$VERSION"
+                    echo "::set-output name=labels::$LABELS"
+                shell: /usr/bin/bash -e {0}
+            -   name: Release New Version
+                uses: softprops/action-gh-release@v1
+                with:
+                    name: v${{ steps.extract_metadata.outputs.version }}
+                    tag_name: v${{ steps.extract_metadata.outputs.version }}
+                    token: ${{ secrets.RELEASE_GIT_TOKEN }}
