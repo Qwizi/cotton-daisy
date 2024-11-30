@@ -1,9 +1,6 @@
-<span
-        class="badge
-    {% if type %}badge-{{ type }}{% endif %}
-    {% if outline %}badge-outline{% endif %}
-    {% if size %}badge-{{ size }}{% endif %}
-    {{ class }}
-">
+<c-vars type outline size additional_class/>
+
+<span class="badge{% if type %} badge-{{ type }}{% endif %}{% if outline %} badge-outline{% endif %}{% if size %} badge-{{ size }}{% endif %}{% if additional_class %} {{ additional_class }}{% endif %}"
+      {{ attrs }}>
     {{ slot }}
 </span>

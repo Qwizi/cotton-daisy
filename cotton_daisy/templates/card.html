@@ -1,36 +1,40 @@
+<c-vars
+        bg="base-100"
+        w
+        shadow
+        compact
+        image_full
+        glass
+        side
+        image_src
+        image_alt="Image alternative text"
+/>
 <div
-        class="card
-    {% if bg %}bg-{{ bg }}{% else %}bg-base-100{% endif %}
-    {% if w %}w-{{ w }}{% else %}w-96{% endif %}
-    {% if shadow %}shadow-{{ shadow }}{% endif %}
-    {% if compact %}card-compact{% endif %}
-    {% if image_full %}image-full{% endif %}
-    {% if glass %}glass{% endif %}
-    {% if side%}lg:card-side{% endif %}
-    {{ class }}"
+        class="card {% if bg %}bg-{{ bg }}{% endif %}
+        {% if w %}w-{{ w }}{% else %}w-96{% endif %}
+        {% if shadow %}shadow-{{ shadow }}{% endif %}
+        {% if compact %}card-compact{% endif %}
+        {% if image_full %}image-full{% endif %}
+        {% if glass %}glass{% endif %}
+        {% if side %}lg:card-side{% endif %}"
+        {{ attrs }}
 >
-    {% if image %}
+    {% if image_src %}
     <figure>
         <img
-                src="{{ image }}"
-                alt="{{ image_alt|default:'Image alternative text' }}"
-                class="{% if image_class %}}{{ image_class }}{% endif %}"
-                height="{% if image_height %}{{ image_height }}{% endif %}"
-                width="{% if image_width %}{{ image_width }}{% endif %}"
+                src="{{ image_src }}"
+                alt="{{ image_alt}}"
         />
     </figure>
     {% endif %}
 
-    <div class="card-body {{ body_class }}">
+    <div class="card-body">
         {% if title %}
-        <h2 class="card-title {{ title_class }}">{{ title }}</h2>
+            <h2 class="card-title">{{ title }}</h2>
         {% endif %}
         {{ slot }}
         {% if footer %}
-        <div class="card-actions
-            {% if footer_justify %}justify-{{ footer_justify }}{% else %}justify-end{% endif %}
-            {{ footer_class }}"
-        >
+        <div class="card-actions justify-end">
             {{ footer }}
         </div>
         {% endif %}
