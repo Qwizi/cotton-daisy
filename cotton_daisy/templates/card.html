@@ -1,41 +1,36 @@
 <div
-        class="
-        card
-        {% if bg %}
-            bg-{{ bg }}
-        {% else %}
-            bg-base-100
-        {% endif %}
-        {% if w %}
-            w-{{ w }}
-        {% else %}
-            w-96
-        {% endif %}
-        {% if shadow %}
-            shadow-{{ shadow }}
-        {% endif %}
-        {% if compact %}
-            card-compact
-        {% endif %}
-        {{ class }}
-">
+        class="card
+    {% if bg %}bg-{{ bg }}{% else %}bg-base-100{% endif %}
+    {% if w %}w-{{ w }}{% else %}w-96{% endif %}
+    {% if shadow %}shadow-{{ shadow }}{% endif %}
+    {% if compact %}card-compact{% endif %}
+    {% if image_full %}image-full{% endif %}
+    {% if glass %}glass{% endif %}
+    {% if side%}lg:card-side{% endif %}
+    {{ class }}"
+>
+    {% if image %}
+    <figure>
+        <img
+                src="{{ image }}"
+                alt="{{ image_alt|default:'Image alternative text' }}"
+                class="{{ if image_class }}{{ image_class }}{% endif %}"
+                height="{% if image_height %}{{ image_height }}{% endif %}"
+                width="{% if image_width %}{{ image_width }}{% endif %}"
+        />
+    </figure>
+    {% endif %}
+
     <div class="card-body {{ body_class }}">
         {% if title %}
         <h2 class="card-title {{ title_class }}">{{ title }}</h2>
         {% endif %}
-
         {{ slot }}
-
         {% if footer %}
-        <div class="
-            card-actions
-            {% if footer_align %}
-                justify-{{ footer_align }}
-            {% else %}
-                justify-end
-            {% endif %}
-            {{ footer_class }}
-        ">
+        <div class="card-actions
+            {% if footer_justify %}justify-{{ footer_justify }}{% else %}justify-end{% endif %}
+            {{ footer_class }}"
+        >
             {{ footer }}
         </div>
         {% endif %}
