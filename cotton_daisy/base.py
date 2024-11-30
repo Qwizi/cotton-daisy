@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 TEMPLATE_DIR = Path(__file__).parent / "templates"
@@ -16,7 +17,9 @@ def generate(component_name: str):
     output_file = output_dir / f"{component_name}.html"
 
     with open(template_path, "r") as template, open(output_file, "w") as output:
-        output.write(template.read())
+        content = template.read()
+        cleaned_content = re.sub(r'class="\s*(.*?)\s*"', lambda m: f'class="{m.group(1).strip()}"', content, flags=re.DOTALL)
+        output.write(cleaned_content)
 
     print(f"Generated {component_name} component at {output_file}")
 
