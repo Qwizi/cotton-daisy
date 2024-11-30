@@ -14,7 +14,7 @@
         <img
                 src="{{ image }}"
                 alt="{{ image_alt|default:'Image alternative text' }}"
-                class="{{ if image_class }}{{ image_class }}{% endif %}"
+                class="{% if image_class %}}{{ image_class }}{% endif %}"
                 height="{% if image_height %}{{ image_height }}{% endif %}"
                 width="{% if image_width %}{{ image_width }}{% endif %}"
         />
