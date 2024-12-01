@@ -1,3 +1,32 @@
-site_name: My Docs
+site_name: Cotton Daisy Docs
 theme:
   name: material
+  features:
+    - content.code.annotate
+    - content.code.copy
+  palette:
+    -   media: "(prefers-color-scheme)"
+        toggle:
+          icon: "material/brightness-auto"
+          name: "Switch to light mode"
+    -   media: "(prefers-color-scheme: light)"
+        scheme: "default"
+        primary: "teal"
+        accent: "purple"
+        toggle:
+          icon: "material/weather-sunny"
+          name: "Switch to dark mode"
+    -   media: "(prefers-color-scheme: dark)"
+        scheme: "slate"
+        primary: "black"
+        accent: "lime"
+        toggle:
+          icon: "material/weather-night"
+          name: "Switch to system preference"
+markdown_extensions:
+  - codehilite
+  - pymdownx.blocks.tab:
+      alternate_style: True
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.blocks.admonition
