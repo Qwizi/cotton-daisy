@@ -6,14 +6,24 @@ version: 2
 
 # Set the version of Python and other tools you might need
 build:
-    os: "ubuntu-22.04"
+    os: ubuntu-22.04
     tools:
-        python: "3.12"
+        python: '3.12'
     jobs:
+        # See https://github.com/readthedocs/readthedocs.org/issues/4912
+        pre_create_environment:
+            # Select Python version (keep in sync with other versions):
+            - asdf install python 3.12
+            - asdf global python 3.12
+            - python -m pip install --upgrade --no-cache-dir virtualenv
+
+            # Install poetry:
+            - asdf plugin add poetry
+            - asdf install poetry latest
+            - asdf global poetry latest
+            - poetry config virtualenvs.create false
         post_install:
-            - "pip install poetry"
-            - "poetry config virtualenvs.create false"
-            - "poetry install --with=docs"
+            - poetry install --only docs
 
 mkdocs:
     configuration: mkdocs.yml
