@@ -8,9 +8,18 @@ readme = "README.md"
 packages = [
     { include = "cotton_daisy" }
 ]
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.47"
+
 [tool.poetry.dependencies]
 python = "^3.12"
 typer = "^0.14.0"
+
+
 
 [tool.poetry.scripts]
 cotton-daisy = "cotton_daisy.cli:app"
