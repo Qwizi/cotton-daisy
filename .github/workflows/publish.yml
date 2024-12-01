@@ -2,6 +2,12 @@ name: Python package
 on:
     release:
         types: [ published ]
+        paths-ignore:
+            - README.md
+            - .gitignore
+            - docs/**
+            - .readthedocs.yaml
+            - mkdocs.yml
 jobs:
     build:
         runs-on: ubuntu-latest
