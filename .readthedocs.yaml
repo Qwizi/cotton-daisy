@@ -10,15 +10,8 @@ build:
     tools:
         python: '3.12'
     jobs:
-        # See https://github.com/readthedocs/readthedocs.org/issues/4912
-        pre_create_environment:
-            # Install poetry:
-            - asdf plugin add poetry
-            - asdf install poetry latest
-            - asdf global poetry latest
-            - poetry config virtualenvs.create false
         post_install:
-            - poetry install --only docs
+            - pip install mkdocs mkdocs-material
 
 mkdocs:
     configuration: mkdocs.yml
