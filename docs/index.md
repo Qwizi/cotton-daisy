@@ -10,6 +10,16 @@ integration of Tailwind-based components into Django projects.
 - Developer-friendly CLI.
 - Customizable component templates.
 
+
+## Requirements
+/// warning | Warning
+Make sure you have installed the following packages before using Cotton-Daisy:
+
+- [DaisyUI](https://daisyui.com/)
+- [Django-Cotton](https://django-cotton.com/)
+
+///
+
 ## Installation
 
 ```bash
