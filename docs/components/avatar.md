@@ -31,13 +31,24 @@ cotton-daisy add avatar
 ```
 ///
 
-/// tab | With Online Status
+/// tab | Online Status
 ```html
 <c-avatar
-        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-        alt="User avatar"
         online_status
         online
+        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+        alt="User avatar"
+/>
+```
+///
+
+/// tab | Offline Status
+```html
+<c-avatar
+        online_status
+        online="False"
+        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+        alt="User avatar"
 />
 ```
 ///
@@ -45,9 +56,9 @@ cotton-daisy add avatar
 /// tab | Rounded
 ```html
 <c-avatar
+        rounded="full"
         src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
         alt="User avatar"
-        rounded="full"
 />
 ```
 ///
@@ -55,9 +66,9 @@ cotton-daisy add avatar
 /// tab | Custom Width
 ```html
 <c-avatar
+        w="24"
         src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
         alt="User avatar"
-        w="24"
 />
 ```
 ///

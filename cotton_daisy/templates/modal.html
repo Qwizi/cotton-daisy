@@ -1,4 +1,5 @@
-<c-vars w max_w close_button title/>
+<c-vars w max_w close_button="True" title/>
+
 <dialog class="modal modal-bottom sm:modal-middle" {{ attrs }} >
     <div class="modal-box{% if w %} w-{{ w }}{% endif %}{% if max_w %} max-w-{{ max_w }}{% endif %}">
         {% if close_button %}
