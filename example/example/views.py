@@ -1,0 +1,10 @@
+from django.views.generic import TemplateView
+
+
+class ExampleView(TemplateView):
+    template_name = 'example.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['example'] = 'Hello World'
+        return context

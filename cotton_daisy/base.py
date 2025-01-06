@@ -12,8 +12,8 @@ def generate_component(component_name: str):
     if not template_path.exists():
         raise ValueError(f"Component {component_name} does not exist.")
 
-    output_dir = Path.cwd() / "templates/cotton"
-    output_dir.mkdir(exist_ok=True)
+    output_dir = Path.cwd() / "templates/cotton/ui"
+    output_dir.mkdir(parents=True, exist_ok=True)
     output_file = output_dir / f"{component_name}.html"
 
     with open(template_path, "r") as template, open(output_file, "w") as output:

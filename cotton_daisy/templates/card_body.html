@@ -1,0 +1,7 @@
+<c-vars title class_name/>
+<div class="card-body{% if class_name %} {{ class_name }}{% endif %}">
+    {% if title %}
+        <h2 class="card-title">{{ title }}</h2>
+    {% endif %}
+    {{ slot }}
+</div>
