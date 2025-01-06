@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mx-auto mt-10">
+
+        <!-- Alerts -->
+        <div id="alerts">
+            <div class="prose mb-2">
+                <h2>Alerts</h2>
+            </div>
+            <c-ui.alert title="Normal" description="Normal" class_name="text-white mb-2"/>
+            <c-ui.alert type="info" title="Info" description="Info" class_name="text-white mb-2"/>
+            <c-ui.alert type="success" title="Success" description="Success" class_name="text-white mb-2"/>
+            <c-ui.alert type="warning" title="Warning" description="Warning" class_name="text-white mb-2"/>
+            <c-ui.alert type="error" title="Error" description="Error" class_name="text-white mb-2"/>
+        </div>
+        <c-ui.divider/>
+        <!-- Buttons -->
+        <div id="buttons">
+            <div class="prose mb-2">
+                <h2>Buttons</h2>
+            </div>
+            <c-ui.button>Normal</c-ui.button>
+            <c-ui.button type="primary">Primary</c-ui.button>
+            <c-ui.button type="secondary">Secondary</c-ui.button>
+            <c-ui.button type="accent">Secondary</c-ui.button>
+            <c-ui.button type="info">Info</c-ui.button>
+            <c-ui.button type="success">Success</c-ui.button>
+            <c-ui.button type="warning">Warning</c-ui.button>
+            <c-ui.button type="error">Error</c-ui.button>
+            <c-ui.button type="primary" active>Active</c-ui.button>
+            <c-ui.button type="primary" outline>Outline</c-ui.button>
+            <c-ui.button type="primary" block>Block</c-ui.button>
+            <c-ui.button type="primary" wide>Wide</c-ui.button>
+            <c-ui.button type="primary" square>Square</c-ui.button>
+            <c-ui.button circle type="primary">Circle</c-ui.button>
+            <c-ui.button type="primary" size="xs">Extra Small</c-ui.button>
+            <c-ui.button type="primary" size="sm">Small</c-ui.button>
+            <c-ui.button type="primary" size="md">Medium</c-ui.button>
+            <c-ui.button type="primary" size="lg">Large</c-ui.button>
+            <div class="join">
+                <c-ui.button type="primary" join>Join1</c-ui.button>
+                <c-ui.button type="primary" join>Join2</c-ui.button>
+            </div>
+        </div>
+        <c-ui.divider/>
+        <!-- Badges -->
+        <div id="badges">
+            <div class="prose mb-2">
+                <h2>Badges</h2>
+            </div>
+            <c-ui.badge>Normal</c-ui.badge>
+            <c-ui.badge type="primary">Primary</c-ui.badge>
+            <c-ui.badge type="secondary">Secondary</c-ui.badge>
+            <c-ui.badge type="accent">Accent</c-ui.badge>
+            <c-ui.badge type="info">Info</c-ui.badge>
+            <c-ui.badge type="success">Success</c-ui.badge>
+            <c-ui.badge type="warning">Warning</c-ui.badge>
+            <c-ui.badge type="error">Error</c-ui.badge>
+            <c-ui.badge type="primary" outline>Outline</c-ui.badge>
+            <c-ui.badge type="primary" size="xs">Extra Small</c-ui.badge>
+            <c-ui.badge type="primary" size="sm">Small</c-ui.badge>
+            <c-ui.badge type="primary" size="md">Medium</c-ui.badge>
+            <c-ui.badge type="primary" size="lg">Large</c-ui.badge>
+        </div>
+        <c-ui.divider/>
+        <!-- Cards -->
+        <div id="cards">
+            <div class="prose mb-2">
+                <h2>Cards</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <c-ui.card bg="base-200" w="full">
+                    <c-ui.card-body title="Card Title">
+                        <p>Card Description</p>
+                    </c-ui.card-body>
+                </c-ui.card>
+                <c-ui.card bg="base-200" w="full" compact>
+                    <c-ui.card-body title="Compact card">
+                        <p>Compact card</p>
+                    </c-ui.card-body>
+                </c-ui.card>
+                <c-ui.card bg="base-200" w="full">
+                    <c-ui.card-body title="Card with actions">
+                        Some actions
+                        <c-ui.card-actions class_name="justify-end">
+                            <c-ui.button type="primary">Action 1</c-ui.button>
+                            <c-ui.button type="secondary">Action 2</c-ui.button>
+                        </c-ui.card-actions>
+                    </c-ui.card-body>
+                </c-ui.card>
+                <c-ui.card bg="base-200" w="full">
+                    <c-slot name="figure">
+                        <c-ui.figure src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"/>
+                    </c-slot>
+                    <c-ui.card-body title="Card with image">
+                    </c-ui.card-body>
+                </c-ui.card>
+            </div>
+        </div>
+        <c-ui.divider></c-ui.divider>
+
+        <!-- Dropdowns -->
+        <div id="dropdowns">
+            <div class="prose mb-2">
+                <h2>Dropdowns</h2>
+            </div>
+            <c-ui.dropdown title="Open dropdown" open class_name="mr-10">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Dropdown">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+
+            <c-ui.dropdown title="Align end" align="end">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Position top" position="top">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Position top /  aligns to end" position="top" align="end">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Position end" position="bottom">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Position end / aligns to end" position="bottom" align="end">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Position left" position="left">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Position right" position="right" class_name="ml-60">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Open on hover" position="bottom" hover class_name="ml-10">
+                <c-ui.dropdown-content bg="base-200">
+                    <li><a>Option 1</a></li>
+                    <li><a>Option 2</a></li>
+                    <li><a>Option 3</a></li>
+                </c-ui.dropdown-content>
+            </c-ui.dropdown>
+            <c-ui.dropdown title="Card as dropdown" position="bottom" hover>
+                <c-ui.card bg="base-200" class_name="dropdown-content z-[1]">
+                    <c-ui.card-body title="Card Title">
+                        <p>Card Description</p>
+                    </c-ui.card-body>
+                </c-ui.card>
+            </c-ui.dropdown>
+        </div>
+        <c-ui.divider class_name="mt-20"></c-ui.divider>
+        <div id="navbars" class="mt-10">
+            <div class="prose mb-2">
+                <h2>Navbars</h2>
+            </div>
+            <c-ui.navbar bg="base-200">
+                <c-ui.navbar-content align="start">
+                    <c-ui.button type="ghost">Start</c-ui.button>
+                </c-ui.navbar-content>
+                <c-ui.navbar-content align="center">
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                </c-ui.navbar-content>
+                <c-ui.navbar-content align="end">
+                    <c-ui.button type="ghost">Login</c-ui.button>
+                    <c-ui.button type="ghost">Register</c-ui.button>
+                </c-ui.navbar-content>
+            </c-ui.navbar>
+
+            <c-ui.navbar bg="base-200" class_name="mt-10">
+                <c-ui.navbar-content align="start">
+                    <c-ui.button type="ghost">Start</c-ui.button>
+                </c-ui.navbar-content>
+                <c-ui.navbar-content align="center">
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                </c-ui.navbar-content>
+                <c-ui.navbar-content align="end">
+                    <c-ui.badge type="info">3</c-ui.badge>
+                    <c-ui.dropdown title="Dropdown" position="bottom" align="end">
+                        <c-ui.dropdown-content bg="base-200">
+                            <li><a>Option 1</a></li>
+                            <li><a>Option 2</a></li>
+                            <li><a>Option 3</a></li>
+                        </c-ui.dropdown-content>
+                    </c-ui.dropdown>
+                </c-ui.navbar-content>
+            </c-ui.navbar>
+            <c-ui.navbar bg="primary" class_name="mt-10">
+                <c-ui.navbar-content align="start">
+                    <c-ui.button type="ghost">Start</c-ui.button>
+                </c-ui.navbar-content>
+                <c-ui.navbar-content align="center">
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                    <c-ui.button type="ghost">Link</c-ui.button>
+                </c-ui.navbar-content>
+                <c-ui.navbar-content align="end">
+                    <c-ui.badge type="info">3</c-ui.badge>
+                    <c-ui.dropdown title="Dropdown" position="bottom" align="end">
+                        <c-ui.dropdown-content bg="base-200">
+                            <li><a>Option 1</a></li>
+                            <li><a>Option 2</a></li>
+                            <li><a>Option 3</a></li>
+                        </c-ui.dropdown-content>
+                    </c-ui.dropdown>
+                </c-ui.navbar-content>
+            </c-ui.navbar>
+        </div>
+        <c-ui.divider class_name="mt-20"></c-ui.divider>
+        <div id="avatars" class="mt-10">
+            <div class="prose mb-2">
+                <h2>Avatars</h2>
+            </div>
+            <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"/>
+            <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" online_status
+                         online="True"/>
+            <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" online_status
+                         online="False"/>
+            <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" online_status
+                         online="True" rounded="full"/>
+            <c-ui.avatar-group>
+                <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                             online_status online="True" rounded="full"/>
+                <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                             online_status online="True" rounded="full"/>
+                <c-ui.avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                             online_status online="True" rounded="full"/>
+            </c-ui.avatar-group>
+        </div>
+        <c-ui.divider class_name="mt-20"></c-ui.divider>
+        <div id="avatars" class="mt-10">
+            <div class="prose mb-2">
+                <h2>Progress</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-4">
+                <c-ui.progress value="96" max="100" w="full" class_name="mb-2" color="success"/>
+                <c-ui.progress value="50" max="100" w="full" class_name="mb-2" color="info"/>
+                <c-ui.progress value="30" max="100" w="full" class_name="mb-2" color="warning"/>
+                <c-ui.progress value="10" max="100" w="full"  class_name="mb-2" color="error"/>
+
+                <c-ui.progress  radial value="96" max="100" class_name="mb-2" color="success" size="12rem">
+                    96%
+                </c-ui.progress>
+                <c-ui.loading type="spinner" size="md"/>
+                <c-ui.loading type="bars" size="md"/>
+                <c-ui.loading type="dots" size="md"/>
+                <c-ui.loading type="infinity" size="md"/>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -15,9 +15,15 @@ optional = true
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.47"
 
+
+[tool.poetry.group.dev.dependencies]
+django = "^5.1.4"
+django-cotton = "^1.5.1"
+
 [tool.poetry.dependencies]
 python = "^3.12"
 typer = "^0.14.0"
+
 
 
 

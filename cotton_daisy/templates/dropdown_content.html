@@ -1,0 +1,4 @@
+<c-vars bg="base-200" rounded="True" w="52" shadow="True" class_name/>
+<ul tabindex="0" class="dropdown-content menu bg-{{ bg }}{% if rounded %} rounded-box{% endif %} z-[1] w-{{ w }} p-2{% if shadow %} shadow{% endif %}{% if class_name %} {{ class_name }}{% endif %}">
+        {{ slot }}
+</ul>
